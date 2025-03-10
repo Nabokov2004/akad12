@@ -1,0 +1,15 @@
+[Unit]
+Description=Python ARP Daemon
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/python3 /opt/arp-daemon/src/arp_daemon.py
+Restart=always
+User=root
+Group=root
+WorkingDirectory=/opt/arp-daemon
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
